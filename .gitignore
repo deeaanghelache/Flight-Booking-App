@@ -1,0 +1,8 @@
+.DS_Store
+.vs/
+Flight_Booking_App.DAL/obj
+Flight_Booking_App.DAL/bin
+Flight_Booking_App.DAL/bin/
+Flight_Booking_App.DAL/obj/
+Flight_Booking_App/obj/
+Flight_Booking_App/bin/

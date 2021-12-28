@@ -19,7 +19,7 @@ namespace Flight_Booking_App.DAL.Entities
         public string ArrivalAirport { get; set; }
         public string Class { get; set; } // default economy, not required
         public int NrOfPassengers { get; set; } // default 1, required
-        public bool OnlyDirect { get; set; } // default false, not required
+        public string OnlyDirect { get; set; } // default false, not required
 
         public int UserId { get; set; }
         public virtual User User { get; set; }

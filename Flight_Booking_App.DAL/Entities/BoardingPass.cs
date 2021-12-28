@@ -17,9 +17,9 @@ namespace Flight_Booking_App.DAL.Entities
     public DateTime BoardingTime { get; set; }
     public string Gate { get; set; }
 
-    public int PassengerId { get; set; }
+    public int? PassengerId { get; set; }
     // public int FlightId { get; set; }
-    public int BookingId { get; set; }
+    public int? BookingId { get; set; }
 
     public virtual Passenger Passenger { get; set; }
     // public virtual Flight Flight { get; set; }

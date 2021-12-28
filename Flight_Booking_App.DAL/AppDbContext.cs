@@ -16,10 +16,11 @@ namespace Flight_Booking_App.DAL
                                 IdentityUserLogin<int>,
                                 IdentityRoleClaim<int>,
                                 IdentityUserToken<int>>
-    { 
-
-    public AppDbContext()
     {
+
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
+
     }
 
     public DbSet<Booking> Bookings { get; set; }
@@ -31,7 +32,8 @@ namespace Flight_Booking_App.DAL
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+
 
         modelBuilder.ApplyConfiguration(new BookingConfiguration());
         modelBuilder.ApplyConfiguration(new PaymentConfiguration());

@@ -44,8 +44,9 @@ namespace Flight_Booking_App.DAL.EntitiesConfiguration
                 .IsRequired();
 
             builder.Property(p => p.OnlyDirect)
-                .HasColumnType("bool")
-                .HasDefaultValue(false);
+                .HasColumnType("nvarchar(10)")
+                .HasMaxLength(10)
+                .HasDefaultValue("false");
 
             builder.HasOne(p => p.User)
                 .WithMany(p => p.Bookings)

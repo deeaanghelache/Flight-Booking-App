@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Flight_Booking_App.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211228193512_EntityMigrationAdded")]
-    partial class EntityMigrationAdded
+    [Migration("20220126174032_migration1")]
+    partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -455,11 +455,13 @@ namespace Flight_Booking_App.DAL.Migrations
                 {
                     b.HasOne("Flight_Booking_App.DAL.Entities.Booking", "Booking")
                         .WithMany("BoardingPasses")
-                        .HasForeignKey("BookingId");
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("Flight_Booking_App.DAL.Entities.Passenger", "Passenger")
                         .WithMany("BoardingPasses")
-                        .HasForeignKey("PassengerId");
+                        .HasForeignKey("PassengerId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Booking");
 

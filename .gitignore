@@ -6,3 +6,6 @@ Flight_Booking_App.DAL/bin/
 Flight_Booking_App.DAL/obj/
 Flight_Booking_App/obj/
 Flight_Booking_App/bin/
+Flight_Booking_App.BLL/bin/
+Flight_Booking_App.BLL/obj/
+Flight_Booking_App_Frontend/node_modules/

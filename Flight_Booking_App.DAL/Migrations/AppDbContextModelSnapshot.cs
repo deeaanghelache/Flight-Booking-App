@@ -453,11 +453,13 @@ namespace Flight_Booking_App.DAL.Migrations
                 {
                     b.HasOne("Flight_Booking_App.DAL.Entities.Booking", "Booking")
                         .WithMany("BoardingPasses")
-                        .HasForeignKey("BookingId");
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("Flight_Booking_App.DAL.Entities.Passenger", "Passenger")
                         .WithMany("BoardingPasses")
-                        .HasForeignKey("PassengerId");
+                        .HasForeignKey("PassengerId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Booking");
 

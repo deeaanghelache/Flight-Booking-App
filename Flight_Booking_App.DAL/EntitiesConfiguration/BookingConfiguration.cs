@@ -55,8 +55,6 @@ namespace Flight_Booking_App.DAL.EntitiesConfiguration
             builder.HasOne(p => p.Flight)
                 .WithMany(p => p.Bookings)
                 .HasForeignKey(p => p.FlightId);
-
-
         }
     }
 }

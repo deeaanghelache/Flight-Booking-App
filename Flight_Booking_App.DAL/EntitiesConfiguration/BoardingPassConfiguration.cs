@@ -31,12 +31,13 @@ namespace Flight_Booking_App.DAL.EntitiesConfiguration
 
             builder.HasOne(p => p.Passenger)
                 .WithMany(p => p.BoardingPasses)
-                .HasForeignKey(p => p.PassengerId);
+                .HasForeignKey(p => p.PassengerId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(p => p.Booking)
                 .WithMany(p => p.BoardingPasses)
-                .HasForeignKey(p => p.BookingId);
-
+                .HasForeignKey(p => p.BookingId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

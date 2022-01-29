@@ -1,0 +1,29 @@
+<!-- <p>profile works!</p> -->
+
+<header>
+    <nav>
+        <ul class="meniu">
+            <li class="submeniu"><a href=""><i class="fas fa-home"></i></a></li>
+            <li class="submeniu" id="special3" *ngIf="logged"><a href="/profile">Profile</a></li>
+            <li class="submeniu" id="special4" *ngIf="logged"><a href="/bookings">Your Bookings</a></li>
+            <li class="submeniu" id="special5" *ngIf="logged"><a href="/passengers">Your Passengers</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<br>
+<br>
+<h1> <i class="far fa-heart"></i> Hello, {{username}}</h1>
+<div class="grid">
+    <div class="grid-item1">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/assets/philip-myrtorp-iiqpxCg2GD4-unsplash.jpg" alt="Card image cap">
+        </div>
+    </div>
+    <div class="grid-item2">
+        <p></p>
+    </div>
+</div>
+</main>
+

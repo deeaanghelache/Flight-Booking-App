@@ -1,0 +1,21 @@
+<!-- <p>congratulations works!</p> -->
+
+<header>
+    <nav>
+        <ul class="meniu">
+            <li class="submeniu" (click)="goToHome()"><a href=""><i class="fas fa-home"></i></a></li>
+            <li class="submeniu" id="special3" *ngIf="logged"><a href="/profile">Profile</a></li>
+            <li class="submeniu" id="special4" *ngIf="logged"><a href="/bookings">Your Bookings</a></li>
+            <li class="submeniu" id="special5" *ngIf="logged"><a href="/passengers">Your Passengers</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<br>
+<br>
+<div class="grid">
+    <img src="/assets/congratulations.jpg" width="100%">
+    <div id="congrats">Congratulations, you have booked a flight!</div>
+</div>
+</main>

@@ -1,0 +1,39 @@
+<!-- <p>bookings works!</p> -->
+
+<header>
+    <nav>
+        <ul class="meniu">
+            <li class="submeniu" (click)="goToHome()"><a href=""><i class="fas fa-home"></i></a></li>
+            <li class="submeniu" id="special3" *ngIf="logged"><a href="/profile">Profile</a></li>
+            <li class="submeniu" id="special4" *ngIf="logged"><a href="/bookings">Your Bookings</a></li>
+            <li class="submeniu" id="special5" *ngIf="logged"><a href="/passengers">Your Passengers</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<br>
+<br>
+<div class="grid">
+    <h1>{{username}}'s Bookings</h1>
+    <div *ngFor="let booking of bookings" class="mybooks">
+        <div id="grid1">
+            <p id="to"><span>{{booking.departureAirport}}</span> TO <span>{{booking.arrivalAirport}}</span></p>
+
+            <span id="dep">{{booking.departureAirport}}</span>
+            <i id="plane" class="fas fa-plane"></i>
+            <span id="arr">{{booking.arrivalAirport}}</span>
+
+            <hr>
+
+        </div>
+        <div id="grid2">
+            <p><span>Departure Date: </span>{{booking.departureDate | date}}</p>
+            <p><span>Arrival Date: </span>{{booking.arrivalDate | date}}</p>
+            <p><span>Number of Passengers travelling: </span>{{booking.nrOfPassengers}}</p>
+            <p><span>Class: </span>{{booking.class}}</p>
+            <p><span>One Way: </span>{{booking.onlyDirect}}</p>
+        </div>
+    </div>
+</div>
+</main>

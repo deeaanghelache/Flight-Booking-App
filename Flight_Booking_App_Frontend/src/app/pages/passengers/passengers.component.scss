@@ -1,0 +1,94 @@
+// meniu
+
+nav{
+    height: 45px;
+    width: 100%;  
+    top: 0;
+    right:0;
+    float: left;
+    background: black;
+    z-index: 10;
+    position: fixed;
+    font-size: small;
+    border: 1px solid black;
+}
+
+nav ul, nav li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+
+nav li a, li div{
+    display: block;
+    color: white;
+    // padding: 0px 4px;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+}
+
+nav ul.meniu ul{
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+nav ul.meniu>li{
+    float: left;
+    width: 150px;
+    background: black;
+    position: relative;
+}
+
+nav ul.meniu li{
+    text-align: center;
+    list-style-type: none;
+    background: black;
+    cursor: pointer;
+    top: 12px;
+}
+
+nav ul.meniu li a, nav ul.meniu li div{
+    text-decoration: none;
+    display: block;
+    // font-weight:bold;
+    height:30px;
+    line-height:10px;
+    // outline:1px solid black; 
+}
+
+i{
+    color: cadetblue;
+}
+
+ul.meniu a:hover, ul.meniu div:hover{
+    // background-color: white; 
+    color: cadetblue;
+}
+
+ul.meniu a, ul.meniu div{
+    /* transition: background 0.5s linear; */
+    transition: color 0.4s linear;
+}
+
+#special1, #special2, #special3, #special4, #special5{
+    // right: -800px;
+    right: -55%;
+    position: relative;
+}
+
+// style grid
+
+$margin: 20px;
+
+.grid{
+    display: grid;
+    margin: $margin;
+    padding: 10px;
+    grid-template-columns: auto;
+    box-shadow: 5px 10px 18px #888888;
+}

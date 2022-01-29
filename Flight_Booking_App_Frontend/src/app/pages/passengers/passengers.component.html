@@ -1,0 +1,102 @@
+<!-- <p>passengers works!</p> -->
+
+<header>
+    <nav>
+        <ul class="meniu">
+            <li class="submeniu" (click)="goToHome()"><a href=""><i class="fas fa-home"></i></a></li>
+            <li class="submeniu" id="special3" *ngIf="logged"><a href="/profile">Profile</a></li>
+            <li class="submeniu" id="special4" *ngIf="logged"><a href="/bookings">Your Bookings</a></li>
+            <li class="submeniu" id="special5" *ngIf="logged"><a href="/passengers">Your Passengers</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<br>
+<br>
+<div class="grid">
+    <div class="addPassenger">
+        <p id="book">Add a new passenger <i class="fas fa-passport"></i></p>
+        <form [formGroup]="PassengerForm" (ngSubmit)="addPassenger()">
+            <div class="form-group">
+                <label>First Name</label>
+                <input class="form-control" 
+                [ngClass]="PassengerForm.controls['firstName'].errors ? 'is-invalid' : ''"
+                formControlName="firstName"/>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input class="form-control" 
+                [ngClass]="PassengerForm.controls['lastName'].errors ? 'is-invalid' : ''"
+                formControlName="lastName"/>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date"
+                class="form-control" 
+                [ngClass]="PassengerForm.controls['dateOfBirth'].errors ? 'is-invalid' : ''"
+                formControlName="dateOfBirth">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>Nationality</label>
+                <input class="form-control" 
+                [ngClass]="PassengerForm.controls['nationality'].errors ? 'is-invalid' : ''"
+                formControlName="nationality"/>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>Travel Document Type</label>
+                <input class="form-control" 
+                [ngClass]="PassengerForm.controls['travelDocument'].errors ? 'is-invalid' : ''"
+                formControlName="travelDocument"/>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>Travel Document Number</label>
+                <input class="form-control" 
+                [ngClass]="PassengerForm.controls['travelDocumentNumber'].errors ? 'is-invalid' : ''"
+                formControlName="travelDocumentNumber"/>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>Travel Document Expiration Date</label>
+                <input type="date"
+                class="form-control" 
+                [ngClass]="PassengerForm.controls['travelDocumentExpirationDate'].errors ? 'is-invalid' : ''"
+                formControlName="travelDocumentExpirationDate">
+            </div>
+
+            <div>
+                <input class="form-control"
+                [ngClass]="PassengerForm.controls['userId'].errors ? 'is-invalid' : ''"
+                 formControlName="userId" value={{userid}} hidden/>
+              </div>
+
+            <br>
+
+            <button 
+            id="buton" 
+            [disabled]="PassengerForm.invalid" 
+            type="submit" class="btn btn-dark">
+                {{text}}
+            </button>
+
+        </form>
+    </div>
+</div>
+</main>

@@ -1,0 +1,56 @@
+<!-- <h1>{{text}}</h1> -->
+<!-- <div id="title"><p>hello</p></div> -->
+
+<header>
+    <nav>
+        <ul class="meniu">
+            <li class="submeniu"><a href=""><i class="fas fa-home"></i></a></li>
+            <li class="submeniu" id="special1"><a href="/login">Login</a></li>
+            <li class="submeniu" id="special2"><a href="/register">Register</a></li> 
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <br>
+    <br>
+<div class="grid">
+    <div class="grid-item1">
+        <p></p>
+    </div>
+    <div class="grid-item2">
+    <h1>Welcome back</h1>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" 
+        [ngClass]="loginForm.controls['email'].errors ? 'is-invalid' : ''"
+        formControlName="email" />
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" 
+        [ngClass]="loginForm.controls['password'].errors ? 'is-invalid' : ''"
+        formControlName="password"/>
+    </div>
+
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-dark">
+        {{text}}
+    </button>
+
+<!-- Property binding la [disabled] -> avem valori dinamice pentru proprietatea disabled-->
+<!-- ngClass concateneaza alte valori la valoarea class -->
+<!-- [class] suprascrie proprietatea class -->
+<!-- <button 
+class="btn"
+[ngClass]="isDisabled? 'btn-primary':'btn-success'" 
+[disabled]="isDisabled" 
+(click)="login()">{{text}}</button> -->
+
+</form>
+
+</div>
+</div>
+
+</main>

@@ -1,0 +1,140 @@
+#title{
+    color: black;
+    text-align: center;
+    background-color: black;
+}
+
+$margin: 20px;
+
+.grid{
+    display: grid;
+    margin: $margin;
+    padding: 10px;
+    grid-template-columns: auto;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.grid-item1{
+    //background-image: url("/assets/IMG_1711.JPG");
+    background-color: cadetblue;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.grid-item2{
+    //margin: 20px;
+    padding: 20px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+input{
+    margin-left: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+h1{
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: cadetblue;
+}
+
+#buton{
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+// meniu
+
+nav{
+    height: 45px;
+    width: 100%;  
+    top: 0;
+    right:0;
+    float: left;
+    background: black;
+    z-index: 10;
+    position: fixed;
+    font-size: small;
+    border: 1px solid black;
+}
+
+nav ul, nav li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+
+nav li a, li div{
+    display: block;
+    color: white;
+    // padding: 0px 4px;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+}
+
+nav ul.meniu ul{
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+nav ul.meniu>li{
+    float: left;
+    width: 150px;
+    background: black;
+    position: relative;
+}
+
+nav ul.meniu li{
+    text-align: center;
+    list-style-type: none;
+    background: black;
+    cursor: pointer;
+    top: 12px;
+}
+
+nav ul.meniu li a, nav ul.meniu li div{
+    text-decoration: none;
+    display: block;
+    // font-weight:bold;
+    height:30px;
+    line-height:10px;
+    // outline:1px solid black; 
+}
+
+i{
+    color: cadetblue;
+}
+
+ul.meniu a:hover, ul.meniu div:hover{
+    // background-color: white; 
+    color: cadetblue;
+}
+
+ul.meniu a, ul.meniu div{
+    /* transition: background 0.5s linear; */
+    transition: color 0.4s linear;
+}
+
+#special1, #special2{
+    // right: -800px;
+    right: -65%;
+    position: relative;
+}

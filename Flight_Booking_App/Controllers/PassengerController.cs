@@ -29,6 +29,7 @@ namespace Flight_Booking_App.Controllers
         }
 
         [HttpPost("AddPassenger")]
+        [Authorize("User")]
         public async Task<IActionResult> AddPassenger([FromBody] Passenger passenger)
         {
             // check-uri
@@ -124,7 +125,6 @@ namespace Flight_Booking_App.Controllers
         }
 
 
-        // nu e testat!
         [HttpGet("GetAllPassengers/{username}")]
         public async Task<IActionResult> GetAllPassengers([FromRoute] string username)
         {
@@ -137,6 +137,14 @@ namespace Flight_Booking_App.Controllers
                 .OrderBy(x => x.LastName)
                 .ToListAsync();
 
+            return Ok(passengers);
+        }
+
+        [HttpGet("GetAllPass")]
+        [Authorize("Admin")]
+        public async Task<IActionResult> GetAllPass()
+        {
+            var passengers = await _context.Passengers.ToListAsync();
             return Ok(passengers);
         }
     }

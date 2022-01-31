@@ -2,6 +2,7 @@
 using Flight_Booking_App.DAL;
 using Flight_Booking_App.DAL.Entities;
 using Flight_Booking_App.DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -57,6 +58,7 @@ namespace Flight_Booking_App.Controllers
         //}
 
         [HttpGet("getAllUsers")]
+        [Authorize("Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             // getUsersInRoleAsync returneaza o lista de useri (care au rolul user)
